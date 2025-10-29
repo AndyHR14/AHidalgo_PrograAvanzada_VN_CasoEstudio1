@@ -1,0 +1,123 @@
+﻿@model CasoEstudio1.Models.Servicios
+<h2>Informacion del Dato a Eliminar</h2>
+
+<form asp-action="Eliminar">
+
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Id"
+               aria-describedby="helpId"
+               placeholder="Id" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Nombre"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Descripcion</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Descripcion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la descripcion del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Monto</label>
+        <input type="number" disabled
+               class="form-control"
+               asp-for="Monto"
+               aria-describedby="helpId"
+               placeholder="Ingrese el monto del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">IVA</label>
+        <input type="number" disabled
+               class="form-control"
+               asp-for="IVA"
+               aria-describedby="helpId"
+               placeholder="Ingrese el IVA del servicio" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="" class="form-label">Especialidad</label>
+        <select class="form-control" disabled
+                asp-for="Especialidad"
+                aria-describedby="helpId"
+                id="Especialidad">
+            <option value="">Seleccione una especialidad</option>
+            <option value="1">1 - Medicina general</option>
+            <option value="2">2 - Imagenología</option>
+            <option value="3">3 - Microbiología</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Especialista</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Especialista"
+               aria-describedby="helpId"
+               placeholder="Ingrese el especialista del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Clinica</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Clinica"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre de la clinica" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeRegistro</label>
+        <input type="date" disabled
+               class="form-control"
+               asp-for="FechaDeRegistro"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de registro" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeModificacion</label>
+        <input type="date" disabled
+               class="form-control"
+               asp-for="FechaDeModificacion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de modificacion" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="" class="form-label">Estado</label>
+        <select class="form-control" disabled
+                asp-for="Estado"
+                aria-describedby="helpId"
+                id="Estado">
+            <option value="">Seleccione un estado</option>
+            <option value="0">0 - Inactivo</option>
+            <option value="1">1 - Activo</option>
+        </select>
+    </div>
+
+    <button type="submit"
+            class="btn btn-danger">
+        Eliminar
+    </button>
+    <a asp-action="Index"
+       class="btn btn-warning">
+        Volver
+    </a>
+
+</form>

@@ -1,0 +1,119 @@
+﻿@model CasoEstudio1.Models.Citas
+<h2>Formulario de Creacion</h2>
+
+@* AGREGAR ESTO PARA VER LOS ERRORES *@
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form asp-action="Reservar">
+    @* 
+    public int Id { get; set; }
+        public string NombreDeLaPersona { get; set; }
+        public string Identificacion { get; set; }
+        public string Telefono { get; set; }
+        public string Correo { get; set; }
+        public DateOnly FechaNacimiento { get; set; }
+        public string Direccion { get; set; }
+        public decimal MontoTotal { get; set; }
+        public DateTime FechaDeRegistro { get; set; }
+
+        [ForeignKey("Servicios")]
+        public int IdServicio { get; set; }
+        public Servicios Servicios { get; set; }
+    *@
+    <div class="mb-3">
+        <label for="" class="form-label">NombreDeLaPersona</label>
+        <input type="text"
+               class="form-control"
+               asp-for="NombreDeLaPersona"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Identificacion</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Identificacion"
+               aria-describedby="helpId"
+               placeholder="Ingrese el numero de identificacion" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Telefono</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Telefono"
+               aria-describedby="helpId"
+               placeholder="Ingrese el numero telefonico" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Correo</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Correo"
+               aria-describedby="helpId"
+               placeholder="Ingrese el correo de la persona" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaNacimiento</label>
+        <input type="date"
+               class="form-control"
+               asp-for="FechaNacimiento"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de nacimiento de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Direccion</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Direccion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la direccion de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeLaCita</label>
+        <input type="date"
+               class="form-control"
+               asp-for="FechaDeLaCita"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de la cita" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Servicio</label>
+        <select class="form-control" asp-for="IdServicio" asp-items="ViewBag.IdServicio">
+            <option value="">Seleccione un servicio</option>
+        </select>
+        <span asp-validation-for="IdServicio" class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Guardar
+    </button>
+    <button type="reset"
+            class="btn btn-danger">
+        Reset
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-warning">
+        Volver
+    </a>
+
+</form>

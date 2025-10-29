@@ -1,0 +1,122 @@
+﻿@model CasoEstudio1.Models.Citas
+<h2>Formulario de Editar</h2>
+
+<form asp-action="Editar">
+
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Id"
+               aria-describedby="helpId"
+               placeholder="Id" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">NombreDeLaPersona</label>
+        <input type="text"
+               class="form-control"
+               asp-for="NombreDeLaPersona"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Identificacion</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Identificacion"
+               aria-describedby="helpId"
+               placeholder="Ingrese el numero de identificacion" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Telefono</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Telefono"
+               aria-describedby="helpId"
+               placeholder="Ingrese el numero telefonico" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Correo</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Correo"
+               aria-describedby="helpId"
+               placeholder="Ingrese el correo de la persona" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaNacimiento</label>
+        <input type="date"
+               class="form-control"
+               asp-for="FechaNacimiento"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de nacimiento de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Direccion</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Direccion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la direccion de la persona" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">MontoTotal</label>
+        <input type="number"
+               class="form-control"
+               asp-for="MontoTotal"
+               aria-describedby="helpId"
+               placeholder="Ingrese el monto total de la cita" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeRegistro</label>
+        <input type="date"
+               class="form-control"
+               asp-for="FechaDeRegistro"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de registro" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeLaCita</label>
+        <input type="date"
+               class="form-control"
+               asp-for="FechaDeLaCita"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de la cita" />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="IdServicio" class="form-label">Servicio</label>
+        <select asp-for="IdServicio"
+                class="form-control"
+                asp-items="@ViewData[" IdServicio"] as SelectList">
+            <option value="">-- Seleccione un Servicio --</option>
+        </select>
+        <span asp-validation-for="IdServicio" class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+        Editar
+    </button>
+    <button type="reset"
+            class="btn btn-danger">
+        Reset
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-warning">
+        Volver
+    </a>
+
+</form>

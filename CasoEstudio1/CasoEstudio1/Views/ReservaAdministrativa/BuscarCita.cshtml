@@ -1,0 +1,31 @@
+﻿@model CasoEstudio1.Models.Citas
+
+<h2>Buscar Cita por Id</h2>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensaje
+
+        @if (ViewBag.MostrarListar == true)
+        {
+            <br />
+            <a asp-action="Index" class="btn btn-primary mt-2">Ver Lista de Citas</a>
+        }
+    </div>
+}
+
+<form asp-action="BuscarCita" method="post">
+    <div class="mb-3">
+        <label for="idCita" class="form-label">idCita</label>
+        <input type="number"
+               class="form-control"
+               id="idCita"
+               name="idCita"
+               placeholder="Ingrese el id de la cita"
+               required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Buscar Cita</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+</form>

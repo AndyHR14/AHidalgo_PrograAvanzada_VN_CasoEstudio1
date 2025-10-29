@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CasoEstudio1.Models.Citas>
+
+<h2>Módulo de Reserva Administrativa - Lista de Citas</h2>
+
+<div class="mb-3">
+    <a asp-controller="Citas" asp-action="Reservar" class="btn btn-primary">Nueva Cita</a>
+    <a asp-action="BuscarCita" class="btn btn-info">Buscar Cita</a>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre de Persona</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Identificación</th>
+            <th>Monto Total</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Fecha Cita</th>
+            <th>Fecha de Registro</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var cita in Model)
+            {
+                <tr>
+                    <td>@cita.NombreDeLaPersona</td>
+                    <td>@cita.Telefono</td>
+                    <td>@cita.Correo</td>
+                    <td>@cita.Identificacion</td>
+                    <td>@cita.MontoTotal</td>
+                    <td>@cita.FechaNacimiento</td>
+                    <td>@cita.FechaDeLaCita</td>
+                    <td>@cita.FechaDeRegistro</td>
+                    <td>
+                        <a asp-action="BuscarCita" asp-route-idCita="@cita.Id" class="btn btn-sm btn-info">Ver Detalles</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center">No hay citas registradas</td>
+            </tr>
+        }
+    </tbody>
+</table>

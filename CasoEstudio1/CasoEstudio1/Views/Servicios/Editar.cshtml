@@ -1,0 +1,105 @@
+﻿@model CasoEstudio1.Models.Servicios
+<h2>Formulario de Editar</h2>
+
+<form asp-action="Editar">
+
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" disabled
+               class="form-control"
+               asp-for="Id"
+               aria-describedby="helpId"
+               placeholder="Id" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Nombre"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Descripcion</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Descripcion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la descripcion del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Monto</label>
+        <input type="number"
+               class="form-control"
+               asp-for="Monto"
+               aria-describedby="helpId"
+               placeholder="Ingrese el monto del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">IVA</label>
+        <input type="number"
+               class="form-control"
+               asp-for="IVA"
+               aria-describedby="helpId"
+               placeholder="Ingrese el IVA del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Especialista</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Especialista"
+               aria-describedby="helpId"
+               placeholder="Ingrese el especialista del servicio" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Clinica</label>
+        <input type="text"
+               class="form-control"
+               asp-for="Clinica"
+               aria-describedby="helpId"
+               placeholder="Ingrese el nombre de la clinica" />
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">FechaDeModificacion</label>
+        <input type="date" disabled
+               class="form-control"
+               asp-for="FechaDeModificacion"
+               aria-describedby="helpId"
+               placeholder="Ingrese la fecha de modificacion" />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Estado" class="form-label">Estado</label>
+        <select class="form-control"
+                asp-for="Estado"
+                aria-describedby="helpId"
+                id="Estado">
+            <option value="">Seleccione un estado</option>
+            <option value="False">0 - Inactivo</option>
+            <option value="True">1 - Activo</option>
+        </select>
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+        Editar
+    </button>
+    <button type="reset"
+            class="btn btn-danger">
+        Reset
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-warning">
+        Volver
+    </a>
+
+</form>

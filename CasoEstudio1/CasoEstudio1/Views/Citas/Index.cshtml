@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CasoEstudio1.Models.Servicios>
+
+<h2>Lista de Servicios Disponibles</h2>
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre del Servicio</th>
+            <th>Especialidad</th>
+            <th>Especialista</th>
+            <th>Monto</th>
+            <th>Clínica</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>
+                    @{
+
+                        string especialidad = item.Especialidad switch
+                        {
+                            1 => "Medicina General",
+                            2 => "Imagenología",
+                            3 => "Microbiología",
+                            _ => "Otro"
+                        };
+                        @especialidad
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Especialista)</td>
+                <td>@Html.DisplayFor(modelItem => item.Monto)</td>
+                <td>@Html.DisplayFor(modelItem => item.Clinica)</td>
+                <td>
+                    <a asp-action="Reservar" asp-route-idServicio="@item.Id" class="btn btn-success btn-sm">Reservar</a>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>

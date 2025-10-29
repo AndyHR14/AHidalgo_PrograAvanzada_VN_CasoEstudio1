@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CasoEstudio1.Models.Servicios>
+
+<h2>Bienvenido a la sección de servicios!</h2>
+
+@* un boton para crear
+ *@
+<a name=""
+   id=""
+   class="btn btn-primary"
+   asp-action="Crear"
+   role="button">Crear</a>
+
+@*   
+    public int Id { get; set; }
+    public string Nombre { get; set; }
+    public string Descripcion { get; set; }
+    public decimal Monto { get; set; }
+    public decimal IVA { get; set; }
+    public int Especialidad { get; set; }
+    public string Especialista { get; set; }
+    public string Clinica { get; set; }
+    public DateTime FechaDeRegistro { get; set; }
+    public DateTime FechaDeModificacion { get; set; }
+    public byte Estado { get; set; } *@
+
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Monto</th>
+                <th scope="col">IVA</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Especialista</th>
+                <th scope="col">Clinica</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Servicios itemDato in Model)
+            {
+                @* tr=fila *@
+                <tr class="">
+                    @* td= columnas *@
+                    <td>@itemDato.Id</td>
+                    <td>@itemDato.Nombre</td>
+                    <td>@itemDato.Descripcion</td>
+                    <td>@itemDato.Monto</td>
+                    <td>@itemDato.IVA</td>
+                    <td>@itemDato.Especialidad</td>
+                    <td>@itemDato.Especialista</td>
+                    <td>@itemDato.Clinica</td>
+                    <td>@itemDato.Estado</td>
+                    <td>
+                        <a name=""
+                           id=""
+                           class="btn btn-primary"
+                           asp-action="Editar"
+                           asp-route-id="@itemDato.Id"
+                           role="button">Editar</a>
+
+                        <a name=""
+                           id=""
+                           class="btn btn-danger"
+                           asp-action="Eliminar"
+                           asp-route-id="@itemDato.Id"
+                           role="button">Eliminar</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
